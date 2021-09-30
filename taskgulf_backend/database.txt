@@ -1,0 +1,10 @@
+DataBase for Student list
+	  
+ create table studentlist(
+	  id int PRIMARY KEY,
+      name varchar(100),
+      gender varchar(100),
+      age varchar(100),
+      mobileNo varchar(20),
+      location varchar(100)   
+	);

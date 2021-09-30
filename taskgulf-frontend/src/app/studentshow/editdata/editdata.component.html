@@ -1,0 +1,45 @@
+
+<form [formGroup]="editForm" (ngSubmit)="EditFormPopUp()">
+  <section class="popup-graybox">
+  <div class="ebook-popup-sec" >
+  <div>&nbsp;</div>
+    <h4 data-edit="text">Edit Student Data</h4>
+    <div class="ebook-email-sec">
+
+     <div class="form-group">
+      <input type="text" formControlName="id" readonly class="form-control" placeholder="Id">
+     </div>
+
+    <div class="form-group">
+
+      <input type="text" formControlName="name" class="form-control" placeholder="name" >
+      <p class="lblError" *ngIf="editForm.get('name').hasError('required')&& !editForm.get('name').pristine">name is Required!...</p>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="gender" class="form-control" placeholder="Gender">
+        <p class="lblError" *ngIf="editForm.get('gender').hasError('required')&& !editForm.get('gender').pristine">gender is Required!...</p>
+    </div>
+    <div class="form-group">
+
+        <input type="text" formControlName="age" class="form-control" placeholder="Age">
+        <p class="lblError" *ngIf="editForm.get('age').hasError('required')&& !editForm.get('age').pristine">age is Required!...</p>
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="mobileNo" class="form-control" placeholder="Mobile No" >
+        <p class="lblError" *ngIf="editForm.get('mobileNo').hasError('required')&& !editForm.get('mobileNo').pristine">Mobile No is Required!...</p>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="location" class="form-control" placeholder="Location" >
+        <p class="lblError" *ngIf="editForm.get('location').hasError('required')&& !editForm.get('location').pristine">Mobile No is Required!...</p>
+    </div>
+
+      <button class="ebook-input-btn" [disabled]="editForm.invalid" type="submit">alright, Edit now</button>
+      <button class="ebook-cls-btn close-btn" type="button" (click)="onclear()" >X</button>
+    </div>
+
+  </div>
+  </section>
+  </form>
+

@@ -1,0 +1,44 @@
+
+<div classss="container" >
+  <div>&nbsp;</div>
+    <h3 align="center">Student Table</h3>
+    <div style="padding-left: 940px;"><button  class="btn btn-sm btn-outline-danger" routerLink="/add">Add+</button></div><br>
+
+    <table class="table" style="width:500px;" align="center" >
+
+
+      <tr>
+      <th >Id</th>
+      <th >Name</th>
+      <th >Gender</th>
+      <th >Age</th>
+      <th >mobileNo</th>
+      <th >Location</th>
+      <th >Actions</th>
+    </tr>
+
+     <tbody>
+       <tr *ngFor="let item of arrStudentList; let i=index">
+               <td>{{item.id}}</td>
+               <td>{{item.name}}</td>
+               <td>{{item.gender}}</td>
+               <td>{{item.age}}</td>
+               <td>{{item.mobileNo}}</td>
+               <td>{{item.location}}</td>
+                <td> <div class="row">&nbsp;&nbsp;
+                  <button (click)="onEdit(item)" class="btn btn-sm btn-outline-primary mr-2" >
+                    <i  class="fa fa-pencil" aria-hidden="true"></i>
+                  </button>&nbsp;
+                  <button (click)="onDelete(item)" class="btn btn-sm btn-outline-danger">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </div>
+                </td>
+         </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+

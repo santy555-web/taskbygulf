@@ -1,0 +1,45 @@
+
+<form [formGroup]="addForm" >
+  <section class="popup-graybox">
+  <div class="ebook-popup-sec" >
+  <div>&nbsp;</div>
+    <h4 data-edit="text">Add Student Data</h4>
+    <div class="ebook-email-sec">
+
+     <div class="form-group">
+      <input type="text" formControlName="id"  class="form-control" placeholder="Id">
+     </div>
+
+    <div class="form-group">
+
+      <input type="text" formControlName="name" class="form-control" placeholder="name" >
+      <p class="lblError" *ngIf="addForm.get('name').hasError('required')&& !addForm.get('name').pristine">name is Required!...</p>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="gender" class="form-control" placeholder="Gender">
+        <p class="lblError" *ngIf="addForm.get('gender').hasError('required')&& !addForm.get('gender').pristine">gender is Required!...</p>
+    </div>
+    <div class="form-group">
+
+        <input type="text" formControlName="age" class="form-control" placeholder="Age">
+        <p class="lblError" *ngIf="addForm.get('age').hasError('required')&& !addForm.get('age').pristine">age is Required!...</p>
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="mobileNo" class="form-control" placeholder="Mobile No" >
+        <p class="lblError" *ngIf="addForm.get('mobileNo').hasError('required')&& !addForm.get('mobileNo').pristine">Mobile No is Required!...</p>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="location" class="form-control" placeholder="Location" >
+        <p class="lblError" *ngIf="addForm.get('location').hasError('required')&& !addForm.get('location').pristine">Mobile No is Required!...</p>
+    </div>
+
+      <button class="ebook-input-btn" (click)="addFormPopUp()"  [disabled]="addForm.invalid" type="submit">alright, Add now</button>
+      <button class="ebook-cls-btn close-btn" type="button" (click)="onclear()" >X</button>
+    </div>
+
+  </div>
+  </section>
+  </form>
+

@@ -1,0 +1,39 @@
+<div class="login-wrapper text-center">
+    <form class="form-login bg-white" [formGroup]='signInForm' (ngSubmit)="login(signInForm)">
+        <div class="form-group" style="font-size:  x-large;">
+            Student Login
+        </div>
+        <div class="form-group">
+            <div class="userid input-group flex-nowrap border-bottom">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0" id="addon-wrapping"><i class="far fa-user-circle"></i></span>
+                </div>
+                <input type="text" formControlName='u_Id' class="form-control border-0" placeholder="User Id" aria-label="UserID"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <!-- <small *ngIf="signInForm.controls['u_Id'].invalid && (signInForm.controls['u_Id'].dirty || signInForm.controls['u_Id'].touched)" id="emailHelp" class="form-text alert alert-danger">
+                <div *ngIf="signInForm.controls['u_Id'].errors.required">
+                    User Name is required.
+                  </div>
+            </small> -->
+        </div>
+        <div class="form-group">
+            <div class="input-group flex-nowrap border-bottom">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0" id="addon-wrapping"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" formControlName ='pass'  class="form-control border-0" placeholder="Password" id="exampleInputPassword1">
+            </div>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group form-check float-left d-inline-block">
+
+            <input type="checkbox" class="form-check-input bg-btn1" id="exampleCheck1">
+            <label class="form-check-label text-muted" for="exampleCheck1">Remember me</label>
+        </div>
+        <div class="form-group form-check float-right d-inline-block">
+            <a href="#" class="text1-color">Forgot Username or Password</a>
+        </div>
+        <button type="submit" class="btn bg-btn1 btn-lg btn-block" [disabled]='!signInForm.valid'>LOGIN</button>
+    </form>
+</div>
